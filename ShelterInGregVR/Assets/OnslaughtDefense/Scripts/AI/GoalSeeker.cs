@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GoalSeeker : MonoBehaviour
 {
     private Seeker seeker;
     private Wanderer wanderer;
+
+    public TMP_Text info;
+    public TMP_Text task;
+    public TMP_Text tickLength;
 
     Goal[] mGoals;
     Action[] mActions;
@@ -33,49 +38,49 @@ public class GoalSeeker : MonoBehaviour
         //6: bug player
 
         mActions = new Action[7];
-        mActions[0] = new Action("eat some raw food");
+        mActions[0] = new Action("feast upon the flesh of my enemies.");
         mActions[0].targetGoals.Add(new Goal("Eat", -3f));
         mActions[0].targetGoals.Add(new Goal("Sleep", +2f));
         mActions[0].targetGoals.Add(new Goal("Bathroom", +1f));
         mActions[0].targetGoals.Add(new Goal("Affection", -1f));
         mActions[0].player = false;
 
-        mActions[1] = new Action("eat a snack");
+        mActions[1] = new Action("eat a pretzel.");
         mActions[1].targetGoals.Add(new Goal("Eat", -2f));
         mActions[1].targetGoals.Add(new Goal("Sleep", -1f));
         mActions[1].targetGoals.Add(new Goal("Bathroom", +1f));
         mActions[1].targetGoals.Add(new Goal("Affection", -1f));
         mActions[1].player = false;
 
-        mActions[2] = new Action("sleep in the bed");
+        mActions[2] = new Action("bury myself in the sand.");
         mActions[2].targetGoals.Add(new Goal("Eat", +2f));
         mActions[2].targetGoals.Add(new Goal("Sleep", -4f));
         mActions[2].targetGoals.Add(new Goal("Bathroom", +2f));
         mActions[2].targetGoals.Add(new Goal("Affection", -2f));
         mActions[2].player = false;
 
-        mActions[3] = new Action("sleep on the sofa");
+        mActions[3] = new Action("sleep on map.");
         mActions[3].targetGoals.Add(new Goal("Eat", +1f));
         mActions[3].targetGoals.Add(new Goal("Sleep", -2f));
         mActions[3].targetGoals.Add(new Goal("Bathroom", +1f));
         mActions[3].targetGoals.Add(new Goal("Affection", +2f));
         mActions[3].player = false;
 
-        mActions[4] = new Action("drink a soda");
+        mActions[4] = new Action("drink the blood of the fallen.");
         mActions[4].targetGoals.Add(new Goal("Eat", -1f));
         mActions[4].targetGoals.Add(new Goal("Sleep", -2f));
         mActions[4].targetGoals.Add(new Goal("Bathroom", +3f));
         mActions[4].targetGoals.Add(new Goal("Affection", -1f));
         mActions[4].player = false;
 
-        mActions[5] = new Action("visit the bathroom");
+        mActions[5] = new Action("visit the little feesh room.");
         mActions[5].targetGoals.Add(new Goal("Eat", 0f));
         mActions[5].targetGoals.Add(new Goal("Sleep", 0f));
         mActions[5].targetGoals.Add(new Goal("Bathroom", -4f));
         mActions[5].targetGoals.Add(new Goal("Affection", 0f));
         mActions[5].player = false;
 
-        mActions[6] = new Action("bug player for cuddles");
+        mActions[6] = new Action("bug player for cuddles.");
         mActions[6].targetGoals.Add(new Goal("Eat", +1f));
         mActions[6].targetGoals.Add(new Goal("Sleep", 0f));
         mActions[6].targetGoals.Add(new Goal("Bathroom", 0f));
@@ -89,6 +94,7 @@ public class GoalSeeker : MonoBehaviour
         mChangeOverTime.targetGoals.Add(new Goal("Affection", +3f));
 
         Debug.Log("Starting clock. One hour will pass every " + TICK_LENGTH + " seconds.");
+        tickLength.text = "One hour/tick is " + TICK_LENGTH + " seconds.";
         InvokeRepeating("Tick", 0f, TICK_LENGTH);
 
         Debug.Log("Hit E to do something.");
@@ -102,6 +108,7 @@ public class GoalSeeker : MonoBehaviour
 
             goal.value = Mathf.Max(goal.value, 0);
         }
+        task.text = "Greg wanders.";
         PrintGoals();
     }
 
@@ -114,6 +121,7 @@ public class GoalSeeker : MonoBehaviour
         }
         goalString += "Discontentment: " + CurrentDiscontentment();
         Debug.Log(goalString);
+        info.text = goalString;
     }
 
     void Update()
@@ -123,6 +131,7 @@ public class GoalSeeker : MonoBehaviour
             Action bestAction = ChooseAction(mActions, mGoals);
 
             Debug.Log("I think I will " + bestAction.name);
+            task.text = "I will now " + bestAction.name;
 
             foreach (Goal goal in mGoals)
             {
