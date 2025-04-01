@@ -15,4 +15,5 @@ EditorBuildSettings:
     path: Assets/OnslaughtDefense/Scenes/VRGameplay.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 51c0d73f7efb3ab45a1577372a1e6e47, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 9c448f8e29410fd429edb679d42d3144, type: 2}
