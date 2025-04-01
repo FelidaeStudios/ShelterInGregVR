@@ -10,7 +10,7 @@ public class GoalSeeker : MonoBehaviour
 
     public TMP_Text info;
     public TMP_Text task;
-    public TMP_Text tickLength;
+    //public TMP_Text tickLength;
 
     Goal[] mGoals;
     Action[] mActions;
@@ -94,7 +94,7 @@ public class GoalSeeker : MonoBehaviour
         mChangeOverTime.targetGoals.Add(new Goal("Affection", +3f));
 
         Debug.Log("Starting clock. One hour will pass every " + TICK_LENGTH + " seconds.");
-        tickLength.text = "One hour/tick is " + TICK_LENGTH + " seconds.";
+        //tickLength.text = "One hour/tick is " + TICK_LENGTH + " seconds.";
         InvokeRepeating("Tick", 0f, TICK_LENGTH);
 
         Debug.Log("Hit E to do something.");

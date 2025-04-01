@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 1105387447354220426}
   - component: {fileID: 2121234792818918028}
   - component: {fileID: 8483627390111719036}
+  - component: {fileID: 2991353092301940427}
   m_Layer: 0
   m_Name: SideWallModRepaired01
   m_TagString: Untagged
@@ -166,6 +167,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2991353092301940427
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7159636080414609066}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 12, z: 5}
+  m_Center: {x: 0, y: 6, z: 0}
 --- !u!1 &7767478108505069770
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,7 +189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6953681532747842160}
-  - component: {fileID: 7300292127087836152}
+  - component: {fileID: 1988889941040429398}
   m_Layer: 0
   m_Name: SideWallMod
   m_TagString: Untagged
@@ -200,16 +214,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7300292127087836152
-BoxCollider:
+--- !u!114 &1988889941040429398
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7767478108505069770}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4775deca3a8f5d64da2780b1ac161d2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  fullHealthMesh: {fileID: -223208528787336390, guid: e629c207222e2a3488028b1ef5bde2f3, type: 3}
+  twoThirdsMesh: {fileID: -223208528787336390, guid: 781c514f9c80cbc478a61d2975fbbec7, type: 3}
+  oneThirdMesh: {fileID: -223208528787336390, guid: 3d66cefbaa94b7048bd8c2df44d51b4d, type: 3}
+  brokenMesh: {fileID: -223208528787336390, guid: 4e1785ef0eae1964c9686ce6ed9ef8a8, type: 3}

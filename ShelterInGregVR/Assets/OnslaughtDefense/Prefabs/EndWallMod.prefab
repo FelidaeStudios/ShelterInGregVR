@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7433208049757902398}
   - component: {fileID: 6726962621264465195}
   - component: {fileID: 4508620290921830161}
+  - component: {fileID: 1312612782614195933}
   m_Layer: 0
   m_Name: EndWallModRepaired01
   m_TagString: Untagged
@@ -83,6 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1312612782614195933
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2632457340158093977}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 12, z: 1}
+  m_Center: {x: 0, y: 6, z: 0}
 --- !u!1 &6463821384840308590
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5980723001229491668}
-  - component: {fileID: 7747030820271625983}
+  - component: {fileID: 8149770592525565176}
   m_Layer: 0
   m_Name: EndWallMod
   m_TagString: Untagged
@@ -117,19 +131,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7747030820271625983
-BoxCollider:
+--- !u!114 &8149770592525565176
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6463821384840308590}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4775deca3a8f5d64da2780b1ac161d2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  fullHealthMesh: {fileID: -787534408289270572, guid: 3df8148ec188e29429a41885240fc57a, type: 3}
+  twoThirdsMesh: {fileID: -787534408289270572, guid: 9280e32300529574e96b9400a73f3658, type: 3}
+  oneThirdMesh: {fileID: -787534408289270572, guid: 62b67fb70b28d8947bd4af2b964c112b, type: 3}
+  brokenMesh: {fileID: -787534408289270572, guid: e5d71af5fb450b648b5955b3cc8ccaad, type: 3}
 --- !u!1 &7510700194653177917
 GameObject:
   m_ObjectHideFlags: 0
