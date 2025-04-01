@@ -99,10 +99,26 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 449818530087711800, guid: 68e64ed2cf152974286cee8b6ebcacb2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c2fc1b1fb70d8bf4dba2777048d9a09e, type: 2}
     - target: {fileID: 919132149155446097, guid: 68e64ed2cf152974286cee8b6ebcacb2, type: 3}
       propertyPath: m_Name
       value: feeshFixedUVs
       objectReference: {fileID: 0}
+    - target: {fileID: 1171549304580213878, guid: 68e64ed2cf152974286cee8b6ebcacb2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f2e7aa9c0d3b61741b32f471c97bd50e, type: 2}
+    - target: {fileID: 2015598994761432364, guid: 68e64ed2cf152974286cee8b6ebcacb2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 328961e94e552ed45bc58717f9196eff, type: 2}
+    - target: {fileID: 8313575387469805017, guid: 68e64ed2cf152974286cee8b6ebcacb2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c5e1e6173aa0af745a5c352e803215c5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68e64ed2cf152974286cee8b6ebcacb2, type: 3}
 --- !u!4 &8256355747906215631 stripped

@@ -6,6 +6,7 @@ public class Shop : MonoBehaviour
 {
     public TurretBlueprint standardTurret;
     public TurretBlueprint smallTurret;
+    public TurretBlueprint largeTurret;
 
     BuildManager buildManager;
 
@@ -24,5 +25,11 @@ public class Shop : MonoBehaviour
     {
         Debug.Log("Small feesh selected");
         buildManager.SetTurretToBuild(buildManager.smallTurretPrefab);
+    }
+
+    public void PurchaseLargeTurret()
+    {
+        Debug.Log("Large feesh selected");
+        buildManager.SetTurretToBuild(buildManager.largeTurretPrefab);
     }
 }

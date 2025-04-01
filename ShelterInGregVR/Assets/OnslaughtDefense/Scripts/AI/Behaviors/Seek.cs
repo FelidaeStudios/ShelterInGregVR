@@ -8,7 +8,6 @@ public class Seek : SteeringBehavior
     public GameObject target;
 
     float maxAcceleration = 100f;
-
     public bool flee = false;
 
     protected virtual Vector3 getTargetPosition()

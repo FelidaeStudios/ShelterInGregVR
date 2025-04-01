@@ -11,12 +11,12 @@ public class EnemyBehavior : MonoBehaviour
 
     public GameObject deathEffect;
 
-    private int waypointIndex = 0;
-    private Transform target;
+    //private int waypointIndex = 0;
+    //private Transform target;
 
     void Start()
     {
-        target = Waypoints.points[0];
+        //target = Waypoints.points[0];
     }
 
     public void TakeDamage(int amount)
@@ -31,16 +31,16 @@ public class EnemyBehavior : MonoBehaviour
 
     void Update()
     {
-        Vector3 dir = target.position- transform.position;
+        /*Vector3 dir = target.position- transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
 
         if (Vector3.Distance(transform.position, target.position) <= 0.4f)
         {
             GetNextWaypoint();
-        }
+        }*/
     }
 
-    void GetNextWaypoint()
+    /*void GetNextWaypoint()
     {
         if (waypointIndex >= Waypoints.points.Length - 1)
         {
@@ -56,7 +56,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         PlayerStats.lives--;
         Destroy(gameObject);
-    }
+    }*/
 
     void Die()
     {
