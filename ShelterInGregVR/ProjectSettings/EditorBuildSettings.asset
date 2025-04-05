@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/OnslaughtDefense/Scenes/Menu.unity
     guid: c445615f41313084790bdb0e1f62913a
-  - enabled: 1
+  - enabled: 0
     path: Assets/OnslaughtDefense/Scenes/AIGameplay.unity
     guid: 38d50a0a6fb827740aea11776fb92111
   - enabled: 1
