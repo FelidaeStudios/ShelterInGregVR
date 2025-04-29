@@ -784,13 +784,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 277964036}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ebff6b3f27f55a4188098e4c3bf6991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 2779567978969341861, guid: 2a9c30b738d458e4eb27aa256b10c938, type: 3}
-  spawnPoint: {fileID: 1905358130}
+  spawnPoints:
+  - {fileID: 1905358130}
+  - {fileID: 1658638560}
+  - {fileID: 1117067797}
+  - {fileID: 948326717}
+  - {fileID: 341899219}
   timeBetweenWaves: 10
   waveCountdownText: {fileID: 1415367264}
 --- !u!4 &277964038
@@ -866,6 +871,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   info: {fileID: 443231366}
   task: {fileID: 110134825}
+  controller: {fileID: 891346248}
+  interactAction: {fileID: -2562941478296515153, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  rayInteractor: {fileID: 891346247}
 --- !u!114 &316850022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1245,6 +1253,7 @@ GameObject:
   - component: {fileID: 484059616}
   - component: {fileID: 484059615}
   - component: {fileID: 484059614}
+  - component: {fileID: 484059619}
   m_Layer: 0
   m_Name: LeftHand Controller
   m_TagString: Untagged
@@ -1803,6 +1812,22 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: 7779212132400271959, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_ButtonPressPoint: 0.5
+--- !u!114 &484059619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484059612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 736f91997993f5447b886b1a75db476e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallTag: Wall
+  controller: {fileID: 484059618}
+  repairAction: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  rayInteractor: {fileID: 484059617}
 --- !u!1 &615225354
 GameObject:
   m_ObjectHideFlags: 0
@@ -5610,6 +5635,14 @@ PrefabInstance:
     - target: {fileID: 3267820234820811203, guid: 1fa4e3c7180a04f49ad75c22b9106ec2, type: 3}
       propertyPath: m_Name
       value: Building
+      objectReference: {fileID: 0}
+    - target: {fileID: 4499024342634808286, guid: 1fa4e3c7180a04f49ad75c22b9106ec2, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4589503181920262955, guid: 1fa4e3c7180a04f49ad75c22b9106ec2, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5837205268461914781, guid: 1fa4e3c7180a04f49ad75c22b9106ec2, type: 3}
       propertyPath: m_LocalRotation.w

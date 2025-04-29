@@ -1,14 +1,18 @@
 using UnityEngine;
 using System.Collections;
 using TMPro;
-using System;
 
 public class WaveSpawner : MonoBehaviour
 {
+    [HideInInspector] public static int numEnemies;
+
     public Transform enemyPrefab;
-    public Transform spawnPoint;
-    public float timeBetweenWaves = 5f;
+    private Transform spawnPoint;
+    public Transform[] spawnPoints;
+
+    public float timeBetweenWaves = 10f;
     private float countdown = 2f; //counts down to start of wave
+
     public TMP_Text waveCountdownText;
     private int waveNum = 0;
 
@@ -28,17 +32,22 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave()
     {
-        //numEnemies = waveNumber * waveNum + 1;
-        for(int i = 0; i < waveNum; i++)
+
+        if (numEnemies < 25)
         {
-            SpawnEnemy();
-            yield return new WaitForSeconds(0.5f);
+            for (int i = 0; i < waveNum; i++)
+            {
+                SpawnEnemy();
+                yield return new WaitForSeconds(0.5f);
+            }
+            waveNum++;
         }
-        waveNum++;
     }
 
     void SpawnEnemy()
     {
+        spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
         Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        numEnemies++;
     }
 }

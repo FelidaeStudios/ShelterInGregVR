@@ -5,7 +5,7 @@ using UnityEngine;
 public class WallHealth : MonoBehaviour
 {
     public int maxHealth = 100;
-    private int curHealth;
+    public int curHealth;
 
     //public int repairAmount = 15;
 

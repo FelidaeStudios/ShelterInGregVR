@@ -9,7 +9,7 @@ public class LeftController : MonoBehaviour
     public string wallTag = "Wall";
 
     public ActionBasedController controller;
-    public InputActionReference placementAction;
+    public InputActionReference repairAction;
     public XRRayInteractor rayInteractor;
 
     void Start()

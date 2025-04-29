@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.InputSystem;
 
 public class GoalSeeker : MonoBehaviour
 {
@@ -17,8 +19,17 @@ public class GoalSeeker : MonoBehaviour
     Action mChangeOverTime;
     const float TICK_LENGTH = 5.0f;
 
+    public ActionBasedController controller;
+    public InputActionReference interactAction;
+    public XRRayInteractor rayInteractor;
+
     void Start()
     {
+        if (rayInteractor == null && controller != null)
+        {
+            rayInteractor = controller.GetComponent<XRRayInteractor>();
+        }
+
         seeker = GetComponent<Seeker>();
         wanderer = GetComponent<Wanderer>();
 
@@ -126,7 +137,15 @@ public class GoalSeeker : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (interactAction != null)
+        {
+            Debug.Log("button pressed 1");
+            interactAction.action.Enable();
+            interactAction.action.performed += ctx => OnButtonDown();
+            Debug.Log("button pressed 2");
+        }
+
+        /*if (Input.GetKeyDown(KeyCode.E))
         {
             Action bestAction = ChooseAction(mActions, mGoals);
 
@@ -150,7 +169,7 @@ public class GoalSeeker : MonoBehaviour
             }
 
             PrintGoals();
-        }
+        }*/
     }
 
     Action ChooseAction(Action[] actions, Goal[] goals)
@@ -194,5 +213,31 @@ public class GoalSeeker : MonoBehaviour
             total += (goal.value * goal.value);
         }
         return total;
+    }
+
+    void OnButtonDown()
+    {
+        Action bestAction = ChooseAction(mActions, mGoals);
+
+        Debug.Log("I think I will " + bestAction.name);
+        task.text = "I will now " + bestAction.name;
+
+        foreach (Goal goal in mGoals)
+        {
+            goal.value += bestAction.GetGoalChange(goal);
+            goal.value = Mathf.Max(goal.value, 0);
+        }
+        if (bestAction.player)
+        {
+            seeker.enabled = seeker.enabled;
+            wanderer.enabled = !wanderer.enabled;
+        }
+        else
+        {
+            seeker.enabled = !seeker.enabled;
+            wanderer.enabled = wanderer.enabled;
+        }
+
+        PrintGoals();
     }
 }
