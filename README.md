@@ -1,6 +1,6 @@
 # ShelterInGregVR
 
-https://github.com/FelidaeStudios/ShelterInGregVR/releases/tag/v1.678
+https://github.com/FelidaeStudios/ShelterInGregVR/releases/tag/v1.789
  
 Build attributes specific to SIM 455:
 
